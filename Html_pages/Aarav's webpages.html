@@ -1,0 +1,67 @@
+<html>
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+			
+                li a:hover {
+                    background-color: #111111;
+                }
+    </style>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+	<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.12),
+    zoom: 2,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+</head>
+<body>
+    <h2>Aarav's webpage</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+    <div id="home">
+        <h2>Home Page</h2>
+
+		<div id="map" style="width:400px;height:400px;background:yellow"></div>
+    </div>
+    <div id="news">
+        <h2>News Page</h2>
+
+    </div>
+<div id="contact">
+<h2>contact</h2>
+        <h2>Contact page</h2>
+
+</div>
+<div id="about">
+        <h2>About page</h2>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<HTML>
+<h1> Login</h1>
+<h3>Username</h3>
+<Input id="textUserName" type="text"/>
+<h3>Password</h3>
+<Input id="textUserPwd" type="text">
+<button onclick="checkList()">
+Sign In
+</button>
+
+
+<h1> Not a member yet? Sign up!</h1>
+
+<ul id="my_list" style="display:none">
+  <li>aarav</li>
+  <li>rahul</li>
+  <li>aanya</li>
+</ul> 
+
+<button onclick="window.open('file:///C:/Aarav/Html_pages/special_membership_sing_up.html')">Sign Up</button>
+
+</HTML>
+
+
+<script>
+
+function checkInput()
+{
+var valid = true;
+if(document.getElementById("textUserName").value == "")
+{
+alert('user name cannot be blank');
+valid = false;
+}
+
+if(document.getElementById("textUserPwd").value == "")
+{
+alert('user password cannot be blank');
+valid = false;
+}
+
+return valid;
+}
+function checkList()
+{
+	var valid = checkInput();
+
+	if(valid)
+	{
+		var name = document.getElementById("textUserName").value;
+		var ul = document.getElementById("my_list");
+		var items = ul.getElementsByTagName("li");
+		var found = false;
+		for (var i = 0; i < items.length; ++i) {
+		if(name == items[i].innerHTML)
+			found = true;
+		}
+		if(found ==false)
+		alert('user name not found');
+	}
+}
+</script>

@@ -1,0 +1,202 @@
+var dancer1;
+var mapping_my_x_position_to;
+var this_sprite;
+var mapping_my_y_position_to;
+
+function mapping_my_x_position_to2(this_sprite2) {
+  if (range == 'low') {
+    setProp(this_sprite, "x", 0);
+  } else if (range == 'med') {
+    setProp(this_sprite, "x", 0);
+  } else {
+    setProp(this_sprite, "x", 0);
+  }
+
+}
+
+function mapping_my_y_position_to2(this_sprite2) {
+  if (range == 'low') {
+    setProp(this_sprite, "y", 0);
+  } else if (range == 'med') {
+    setProp(this_sprite, "y", 0);
+  } else {
+    setProp(this_sprite, "y", 0);
+  }
+
+}
+
+whenSetup(function () {
+  setBackgroundEffectWithPalette("lasers", "electronic");
+  dancer1 = makeNewDanceSprite("CAT", dancer1, {x: 200, y: 200});
+  makeNewDanceSpriteGroup(20, "ROBOT", "circle");
+  makeNewDanceSpriteGroup(20, "ROBOT", "circle");
+  setPropEach("ROBOT", "scale", 20);
+});
+
+whenKey("space", function () {
+  changeMoveEachLR(sprites, MOVES.Roll, -1);
+});
+
+whenKey("g", function () {
+  changeMoveEachLR(sprites, MOVES.Kick, -1);
+});
+
+whenKey("enter", function () {
+  changeMoveEachLR(sprites, MOVES.ClapHigh, -1);
+});
+
+whenKey("h", function () {
+  changeMoveEachLR(sprites, MOVES.Kick, -1);
+});
+
+whenKey("a", function () {
+  changeMoveEachLR(sprites, MOVES.Dab, -1);
+});
+
+whenKey("i", function () {
+  changeMoveEachLR(sprites, MOVES.ThisOrThat, -1);
+});
+
+whenKey("b", function () {
+  changeMoveEachLR(sprites, MOVES.DoubleJam, -1);
+});
+
+whenKey("j", function () {
+  changeMoveEachLR(sprites, MOVES.Thriller, -1);
+});
+
+whenKey("c", function () {
+  changeMoveEachLR(sprites, MOVES.Drop, -1);
+});
+
+whenKey("k", function () {
+  changeMoveEachLR(sprites, MOVES.Rest, -1);
+});
+
+whenKey("up", function () {
+  changeMoveEachLR("ROBOT", "next", -1);
+});
+
+whenKey("d", function () {
+  changeMoveEachLR(sprites, MOVES.Floss, -1);
+});
+
+whenKey("p", function () {
+  setBackgroundEffectWithPalette("fireworks", "cool");
+});
+
+whenKey("down", function () {
+  changeMoveEachLR("ROBOT", "prev", -1);
+});
+
+whenKey("e", function () {
+  changeMoveEachLR(sprites, MOVES.Fresh, -1);
+});
+
+whenKey("o", function () {
+  setBackgroundEffectWithPalette("disco_ball", "cool");
+});
+
+whenKey("left", function () {
+  changeMoveLR(dancer1, MOVES.ClapHigh, -1);
+});
+
+whenKey("f", function () {
+  changeMoveEachLR(sprites, MOVES.Clown, -1);
+});
+
+whenKey("right", function () {
+  changeMoveLR(dancer1, "rand", -1);
+});
+
+whenKey("n", function () {
+  setBackgroundEffectWithPalette("diamonds", "cool");
+});
+
+whenKey("q", function () {
+  setBackgroundEffectWithPalette("swirl", "cool");
+});
+
+whenKey("w", function () {
+  setBackgroundEffectWithPalette("rainbow", "cool");
+});
+
+whenKey("l", function () {
+  setBackgroundEffectWithPalette("circles", "cool");
+});
+
+whenKey("m", function () {
+  setBackgroundEffectWithPalette("color_cycle", "cool");
+});
+
+whenKey("r", function () {
+  setBackgroundEffectWithPalette("kaleidoscope", "cool");
+});
+
+whenKey("t", function () {
+  setBackgroundEffectWithPalette("splatter", "cool");
+});
+
+whenKey("u", function () {
+  setBackgroundEffectWithPalette("snowflakes", "cool");
+});
+
+whenKey("s", function () {
+  setBackgroundEffectWithPalette("lasers", "cool");
+});
+
+whenKey("v", function () {
+  setBackgroundEffectWithPalette("text", "cool");
+});
+
+whenKey("x", function () {
+  setBackgroundEffectWithPalette("galaxy", "cool");
+});
+
+whenKey("z", function () {
+  setBackgroundEffectWithPalette("spiral", "cool");
+});
+
+whenKey("y", function () {
+  setBackgroundEffectWithPalette("sparkles", "cool");
+});
+
+whenKey("1", function () {
+  setBackgroundEffectWithPalette("disco", "cool");
+});
+
+whenKey("2", function () {
+  setBackgroundEffectWithPalette("color_cycle", "cool");
+});
+
+whenKey("3", function () {
+  setDanceSpeedEach(sprites, 4);
+});
+
+whenKey("4", function () {
+  setDanceSpeedEach(sprites, 2);
+});
+
+whenKey("5", function () {
+  setDanceSpeedEach(sprites, 1);
+});
+
+whenKey("0", function () {
+  setTintInline(dancer1, '#0000ff');
+});
+
+whenKey("6", function () {
+  setDanceSpeedEach(sprites, 0.5);
+});
+
+whenKey("7", function () {
+  setDanceSpeedEach(sprites, 0.25);
+});
+
+whenKey("8", function () {
+  setTintInline(dancer1, '#ff0000');
+});
+
+whenKey("9", function () {
+  setTintInline(dancer1, '#ff00ff');
+});

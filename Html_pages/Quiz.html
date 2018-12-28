@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url("Questions.jpg");
+        }
+    </style>
+    <script>
+        var currLanguage = "spanish";
+        var allAnswersCorrect = true;
+        var secretOTP = "";
+
+        function getSecretOTP() {
+            secretOTP = Math.floor(Math.random() * 10000) + 1;
+            return secretOTP
+        }
+
+
+        function getTranslation(selectionName) {
+            if (currLanguage == "spanish") {
+                if (selectionName == "strawberry") {
+                    selectionName = "fresa";
+                }
+                else if (selectionName == "red") {
+                    selectionName = "rojo";
+                }
+                else if (selectionName == "christmas") {
+                    selectionName = "navidad";
+                }
+                else if (selectionName == "bear") {
+                    selectionName = "osa";
+                }
+                else if (selectionName == "hindi") {
+                    selectionName = "hindi";
+                }
+                else if (selectionName == "All of your selections are correct. The code is " + secretOTP + ".") {
+                    selectionName = "Todas sus selecciones son correctas. El código es " + secretOTP + ".";
+                }
+                else if (selectionName == "All of your selections are not correct!") {
+                    selectionName = "Todas sus selecciones no son correctas!";
+                }
+            }
+            else if (currLanguage == "french") {
+                if (selectionName == "strawberry") {
+                    selectionName = "fraise";
+                }
+                else if (selectionName == "red") {
+                    selectionName = "rouge";
+                }
+                else if (selectionName == "christmas") {
+                    selectionName = "noël";
+                }
+                else if (selectionName == "bear") {
+                    selectionName = "ours";
+                }
+                else if (selectionName == "hindi") {
+                    selectionName = "hindi";
+                }
+                else if (selectionName == "All of your selections are correct. The code is " + secretOTP + ".") {
+                    selectionName = "Toutes vos sélections sont correctes. Le code est " + secretOTP + ".";
+                }
+                else if (selectionName == "All of your selections are not correct!") {
+                    selectionName = "Toutes vos sélections ne sont pas correctes!";
+                }
+            }
+            return selectionName;
+        }
+
+        function show(elementID) {
+            document.getElementById(elementID).style.display = "block";
+        }
+
+        function hide(elementID) {
+            document.getElementById(elementID).style.display = "none";
+        }
+
+        function reset() {
+            var imagesList = document.getElementsByClassName("images");
+            var i;
+            for (i = 0; i < imagesList.length; i++) {
+                imagesList[i].style.display = "none";
+            }
+
+            resetDropdown();
+        }
+
+
+        function checkLanguage() {
+
+            if (document.getElementById("radioEnglish").checked) {
+                currLanguage = "";
+                hide("divSpanish");
+                hide("divFrench");
+                show("divEnglish");
+            }
+            else if (document.getElementById("radioSpanish").checked) {
+                currLanguage = "spanish";
+                hide("divEnglish");
+                hide("divFrench");
+                show("divSpanish");
+            }
+            else if (document.getElementById("radioFrench").checked) {
+                currLanguage = "french";
+                hide("divEnglish");
+                hide("divSpanish");
+                show("divFrench");
+            }
+            reset();
+        }
+
+        function getElementName(elementName) {
+            if (currLanguage == "spanish")
+                elementName = "s" + elementName;
+            if (currLanguage == "french")
+                elementName = "f" + elementName;
+            if (currLanguage == "")
+                elementName = elementName;
+            return elementName;
+        }
+
+        function OnSubmitCodeClick() {
+            if (document.getElementById(getElementName("code")).value == secretOTP) {
+                show(getElementName("imgSuccess"));
+                hide(getElementName("imgWrong"));
+            }
+            else {
+                show(getElementName("imgWrong"));
+                hide(getElementName("imgSuccess"));
+            }
+        }
+        function onCorrectClick() {
+            setSelectedThing(getElementName("food"), getTranslation("strawberry"));
+            setSelectedThing(getElementName("color"), getTranslation("red"));
+            setSelectedThing(getElementName("holiday"), getTranslation("christmas"));
+            setSelectedThing(getElementName("animal"), getTranslation("bear"));
+            setSelectedThing(getElementName("language"), getTranslation("hindi"));
+        }
+        function resetDropdown() {
+            document.getElementById(getElementName("food")).selectedIndex = "0";
+            document.getElementById(getElementName("color")).selectedIndex = "0";
+            document.getElementById(getElementName("holiday")).selectedIndex = "0";
+            document.getElementById(getElementName("animal")).selectedIndex = "0";
+            document.getElementById(getElementName("language")).selectedIndex = "0";
+        }
+        function setSelectedThing(checkThis, correctAnswer) {
+            document.getElementById(checkThis).value = correctAnswer;
+        }
+        function onSubmitClick() {
+
+
+
+            //reset stuff
+            allAnswersCorrect = true;
+            document.getElementById(getElementName("testResult")).innerHTML = "";
+
+            //check dropdowns
+            checkSelectedThing(getElementName("food"), getTranslation("strawberry"));
+            checkSelectedThing(getElementName("color"), getTranslation("red"));
+            checkSelectedThing(getElementName("holiday"), getTranslation("christmas"));
+            checkSelectedThing(getElementName("animal"), getTranslation("bear"));
+            checkSelectedThing(getElementName("language"), getTranslation("hindi"));
+
+            //show result
+            if (allAnswersCorrect)
+                document.getElementById(getElementName("testResult")).innerHTML = getTranslation("All of your selections are correct. The code is " + getSecretOTP() + ".");
+            else
+                document.getElementById(getElementName("testResult")).innerHTML = getTranslation("All of your selections are not correct!");
+        }
+
+
+        function checkSelectedThing(checkThis, correctAnswer) {
+            var selectedFood = document.getElementById(checkThis).value;
+            var messageList = "";
+            if (selectedFood == correctAnswer) {
+                //messageList = "Your " + checkThis + " selection is correct! <br/>";
+            }
+            else {
+                allAnswersCorrect = false;
+                //messageList = "Your " + checkThis + " selection is not correct! <br/>";
+
+            }
+
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+        Choose Language:  <input type="radio" id="radioEnglish" name="language" value="english" onchange="checkLanguage()">English
+        <input id="radioSpanish" type="radio" name="language" value="spanish" onchange="checkLanguage()"> Spanish
+        <input id="radioFrench" type="radio" name="language" value="french" onchange="checkLanguage()"> French
+        <br>
+
+
+        <div id="divFrench" style="display:none;">
+            <table>
+
+                <tr>
+
+                    <td>
+                        <h1>
+                            Pouvez-vous déchiffrer le code avec mes choses préférées?
+                        </h1>
+                        <h3>
+                            Quel est mon plat préféré?
+                        </h3>
+                        <select id="ffood">
+                            <option>--Sélectionnez--</option>
+                            <option>pomme</option>
+                            <option>banane</option>
+                            <option>raisin</option>
+                            <option>citron</option>
+                            <option>fraise</option>
+                            <option>framboise</option>
+                        </select>
+                        <h3>
+                            Quelle est ma couleur préférée?
+                        </h3>
+                        <select id="fcolor">
+                            <option>--Sélectionnez--</option>
+                            <option>rouge</option>
+                            <option>vert</option>
+                            <option>jaune</option>
+                            <option>violet</option>
+                            <option>noir</option>
+                            <option>bleu</option>
+                            <option>rose</option>
+                            <option>indigo</option>
+                        </select>
+                        <h3>
+                            Quelles sont mes vacances préférées?
+                        </h3>
+                        <select id="fholiday">
+                            <option>--Sélectionnez--</option>
+                            <option>holi</option>
+                            <option>noël</option>
+                            <option>nouvel an</option>
+                            <option>veille de Noël</option>
+                            <option>veille du nouvel an</option>
+                            <option>diwali</option>
+                        </select>
+                        <h3>
+                            Quel est votre animal préféré?
+                        </h3>
+                        <select id="fanimal">
+                            <option>--Sélectionnez--</option>
+                            <option>moufette</option>
+                            <option>ours</option>
+                            <option>chat</option>
+                            <option>chien</option>
+                            <option>taureau</option>
+                            <option>écureuil</option>
+                        </select>
+                        <h3>
+                            Quelle est votre langue préférée?
+                        </h3>
+                        <select id="flanguage">
+                            <option>--Sélectionnez--</option>
+                            <option>anglais</option>
+                            <option>spainsh</option>
+                            <option>français</option>
+                            <option>chinois</option>
+                            <option>hindi</option>
+                            <option>marathi</option>
+                            <option>tamil</option>
+                        </select>
+                    </td>
+                    <td>
+                        <img id="fimgSuccess" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\golden-trophy.png" />
+                        <img id="fimgWrong" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\Wrong2.png" />
+
+                    </td>
+
+                </tr>
+
+            </table>
+            <br />
+            <p id="ftestResult">
+
+            </p>
+
+
+            <br />
+            <button onclick="onSubmitClick()"> Soumettre </button>
+            <br /> <br />
+            <button onclick="onCorrectClick()"> Réponses correctes </button>
+            <input placeholder="tapez votre code" id="fcode" type="password">
+
+            <br />
+            <br />
+            <br />
+            <button onclick="OnSubmitCodeClick()"> Code d'envoi </button>
+            <br />
+            <br />
+            <br />
+        </div>
+
+        <div id="divSpanish" style="display:none;">
+            <table>
+                <tr>
+                    <td>
+                        <h1>
+                            ¿Puedes descifrar el código con mis cosas favoritas?
+                        </h1>
+                        <h3>
+                            ¿Cuál es mi comida favorita?
+                        </h3>
+                        <select id="sfood">
+                            <option>--seleccionar--</option>
+                            <option>manzana</option>
+                            <option>plátano</option>
+                            <option>uva</option>
+                            <option>limón</option>
+                            <option>fresa</option>
+                            <option>frambuesa</option>
+                        </select>
+                        <h3>
+                            ¿Cuál es mi color favorito?
+                        </h3>
+                        <select id="scolor">
+                            <option>--seleccionar--</option>
+                            <option>rojo</option>
+                            <option>verde</option>
+                            <option>amarillo</option>
+                            <option>púrpura</option>
+                            <option>black</option>
+                            <option>azul</option>
+                            <option>rosa</option>
+                            <option>indigo</option>
+                        </select>
+                        <h3>
+                            ¿Cuál es mi fiesta favorita?
+                        </h3>
+                        <select id="sholiday">
+                            <option>--seleccionar--</option>
+                            <option>holi</option>
+                            <option>navidad</option>
+                            <option>año nuevo</option>
+                            <option>nochebuena</option>
+                            <option>víspera de año nuevo</option>
+                            <option>diwali</option>
+                        </select>
+                        <h3>
+                            ¿Cuál es tu animal favorito?
+                        </h3>
+                        <select id="sanimal">
+                            <option>--seleccionar--</option>
+                            <option>zorrillo</option>
+                            <option>osa</option>
+                            <option>gato</option>
+                            <option>perro</option>
+                            <option>toro</option>
+                            <option>ardilla</option>
+                        </select>
+                        <h3>
+                            ¿Cuál es tu idioma favorito?
+                        </h3>
+                        <select id="slanguage">
+                            <option>--seleccionar--</option>
+                            <option>inglés</option>
+                            <option>español</option>
+                            <option>francés</option>
+                            <option>chino</option>
+                            <option>hindi</option>
+                            <option>marathi</option>
+                            <option>tamil</option>
+                        </select>
+                    </td>
+                    <td>
+                        <img id="simgSuccess" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\golden-trophy.png" />
+                        <img id="simgWrong" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\wrong2.png" />
+
+                    </td>
+
+                </tr>
+
+            </table>
+            <br />
+            <p id="stestResult">
+
+            </p>
+            <br />
+            <button onclick="onSubmitClick()">Enviar</button>
+            <br /><br />
+            <button onclick="onCorrectClick()">Respuestas correctas</button>
+            <input placeholder="Escribe el código" id="scode" type="password">
+            <br />
+            <br />
+            <br />
+            <button onclick="OnSubmitCodeClick()">Ingrese el código</button>
+        </div>
+
+        <div id="divEnglish" style="display:none;">
+            <table>
+
+                <tr>
+
+                    <td>
+                        <h1>
+                            Can you crack the code with my favroite things?
+                        </h1>
+                        <h3>
+                            What is my favorite food?
+                        </h3>
+                        <select id="food">
+                            <option>--Select--</option>
+                            <option>apple</option>
+                            <option>banana</option>
+                            <option>grape</option>
+                            <option>lemon</option>
+                            <option>strawberry</option>
+                            <option>rasberry</option>
+                        </select>
+                        <h3>
+                            What is my favorite color?
+                        </h3>
+                        <select id="color">
+                            <option>--Select--</option>
+                            <option>red</option>
+                            <option>green</option>
+                            <option>yellow</option>
+                            <option>purple</option>
+                            <option>black</option>
+                            <option>blue</option>
+                            <option>pink</option>
+                            <option>indigo</option>
+                        </select>
+                        <h3>
+                            What is my favorite holiday?
+                        </h3>
+                        <select id="holiday">
+                            <option>--Select--</option>
+                            <option>holi</option>
+                            <option>christmas</option>
+                            <option>new year</option>
+                            <option>christmas eve</option>
+                            <option>new year eve</option>
+                            <option>diwali</option>
+                        </select>
+                        <h3>
+                            What is your favorite animal?
+                        </h3>
+                        <select id="animal">
+                            <option>--Select--</option>
+                            <option>skunk</option>
+                            <option>bear</option>
+                            <option>cat</option>
+                            <option>dog</option>
+                            <option>bull</option>
+                            <option>squirrel</option>
+                        </select>
+                        <h3>
+                            What is your favorite language?
+                        </h3>
+                        <select id="language">
+                            <option>--Select--</option>
+                            <option>english</option>
+                            <option>spainsh</option>
+                            <option>french</option>
+                            <option>chinese</option>
+                            <option>hindi</option>
+                            <option>marathi</option>
+                            <option>tamil</option>
+                        </select>
+                    </td>
+                    <td>
+                        <img id="imgSuccess" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\golden-trophy.png" />
+                        <img id="imgWrong" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\Wrong.png" />
+
+                    </td>
+
+                </tr>
+
+            </table>
+            <br />
+            <p id="testResult">
+
+            </p>
+
+
+            <br />
+            <button onclick="onSubmitClick()">Submit</button>
+            <br /><br />
+            <!--<button onclick="onCorrectClick()">Correct Answers</button>-->
+            <input placeholder="type your code" id="code" type="password">
+
+            <br />
+            <br />
+            <br />
+            <button onclick="OnSubmitCodeClick()">Submit Code</button>
+            <br />
+            <br />
+            <br />
+        </div>
+
+</body>
+<!--<script>
+    checkLanguage();
+</script>-->
+</html>

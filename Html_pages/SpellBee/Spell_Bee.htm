@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+</head>
+<body>
+<h2>Aarav's Spell Bee </h2>
+<span>Correct:</span> <input id="txtCorrect" type="text" />
+<span>InCorrect:</span> <input id="txtInCorrect" type="text" />
+<span>Total:</span> <input id="txtTotal" type="text" />
+
+<button onclick='speak(this)'>yield</button><button onclick='setCorrect()'>Correct</button><button onclick='setInCorrect()'>InCorrect</button>
+</body>
+</html>
+<script>
+
+var total = 0;
+var Correct = 0;
+var InCorrect = 0;
+
+var txtCorrect = document.getElementById("txtCorrect");
+var txtInCorrect = document.getElementById("txtInCorrect");
+var txtTotal = document.getElementById("txtTotal");
+
+function speak(button)
+{
+	responsiveVoice.speak("Please Spell " +button.innerHTML);
+}
+
+function updateTotal()
+{
+	total = total + 1;
+	txtTotal.value = total;
+}
+
+function setCorrect()
+{
+	Correct = Correct + 1;
+	txtCorrect.value = Correct;
+	updateTotal();
+}
+function setInCorrect()
+{
+	InCorrect = InCorrect + 1;
+	txtInCorrect.value = InCorrect;
+	updateTotal();
+}
+
+
+</script>
