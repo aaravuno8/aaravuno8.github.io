@@ -1,8 +1,21 @@
 <!DOCTYPE html>
+<div id="div work area">
 <head>
     <style>
         body {
-            background-image: url("Questions.jpg");
+            background-color: aqua;
+            color: crimson;
+            font-size: 25px;
+            
+        }
+        button {
+            font-size: 25px;
+        }
+        select {
+            font-size: 25px;
+        }
+        input {
+            font-size: 25px;
         }
     </style>
     <script>
@@ -18,8 +31,8 @@
 
         function getTranslation(selectionName) {
             if (currLanguage == "spanish") {
-                if (selectionName == "strawberry") {
-                    selectionName = "fresa";
+                if (selectionName == "Nile River") {
+                    selectionName = "el rio Nilo   ";
                 }
                 else if (selectionName == "red") {
                     selectionName = "rojo";
@@ -189,11 +202,12 @@
 
 </head>
 <body>
+   <div id="div Choose Language">
         Choose Language:  <input type="radio" id="radioEnglish" name="language" value="english" onchange="checkLanguage()">English
         <input id="radioSpanish" type="radio" name="language" value="spanish" onchange="checkLanguage()"> Spanish
         <input id="radioFrench" type="radio" name="language" value="french" onchange="checkLanguage()"> French
         <br>
-
+  </div>
 
         <div id="divFrench" style="display:none;">
             <table>
@@ -269,8 +283,8 @@
                         </select>
                     </td>
                     <td>
-                        <img id="fimgSuccess" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\golden-trophy.png" />
-                        <img id="fimgWrong" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\Wrong2.png" />
+                        <img id="fimgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
+                        <img id="fimgWrong" class="images" style="display:none;" src="images\Wrong2.png" />
 
                     </td>
 
@@ -310,68 +324,81 @@
                         </h3>
                         <select id="sfood">
                             <option>--seleccionar--</option>
-                            <option>manzana</option>
-                            <option>plátano</option>
-                            <option>uva</option>
-                            <option>limón</option>
-                            <option>fresa</option>
-                            <option>frambuesa</option>
+                            <option>Arkansas River</option>
+                            <option>el rio Nilo</option>
+                            <option>río Rojo</option>
+                            <option>Rio yukon</option>
+                            <option>río Mississippi</option>
+                            <option>Rio misuri</option>
+                            <option>Rio de ohio</option>
                         </select>
                         <h3>
                             ¿Cuál es mi color favorito?
                         </h3>
                         <select id="scolor">
                             <option>--seleccionar--</option>
-                            <option>rojo</option>
-                            <option>verde</option>
-                            <option>amarillo</option>
-                            <option>púrpura</option>
-                            <option>black</option>
-                            <option>azul</option>
-                            <option>rosa</option>
-                            <option>indigo</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option>
+                            <option>Elon Musk</option>
+                            <option>Cristobal colomb</option>
                         </select>
                         <h3>
                             ¿Cuál es mi fiesta favorita?
                         </h3>
                         <select id="sholiday">
                             <option>--seleccionar--</option>
-                            <option>holi</option>
-                            <option>navidad</option>
-                            <option>año nuevo</option>
-                            <option>nochebuena</option>
-                            <option>víspera de año nuevo</option>
-                            <option>diwali</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option>
+                            <option>Elon Musk</option>
                         </select>
                         <h3>
                             ¿Cuál es tu animal favorito?
                         </h3>
                         <select id="sanimal">
                             <option>--seleccionar--</option>
-                            <option>zorrillo</option>
-                            <option>osa</option>
-                            <option>gato</option>
-                            <option>perro</option>
-                            <option>toro</option>
-                            <option>ardilla</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Jeff Bezos</option>
+                            <option>Cristobal colomb</option>
+                            <option>Elon Musk</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
                         </select>
                         <h3>
                             ¿Cuál es tu idioma favorito?
                         </h3>
                         <select id="slanguage">
                             <option>--seleccionar--</option>
-                            <option>inglés</option>
-                            <option>español</option>
-                            <option>francés</option>
-                            <option>chino</option>
-                            <option>hindi</option>
-                            <option>marathi</option>
-                            <option>tamil</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option>
+                            <option>Cristobal colomb</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Elon Musk</option>
                         </select>
+                        <select id="slanguage">
+                            <option>--seleccionar--</option>
+                            <option>6783</option>
+                            <option>3425</option>
+                            <option>1334 (correcto)</option>
+                            <option>987</option>
+                            <option>2199</option>
+                            <option>3400</option>
+                            <option>3567</option>
+                            <option>1345</option>
+                            <option>1344</option>
+                            <option>1343</option>
+                        </select>
+
+
+
                     </td>
                     <td>
-                        <img id="simgSuccess" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\golden-trophy.png" />
-                        <img id="simgWrong" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\wrong2.png" />
+                        <img id="simgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
+                        <img id="simgWrong" class="images" style="display:none;" src="images\wrong2.png" />
 
                     </td>
 
@@ -400,75 +427,89 @@
 
                     <td>
                         <h1>
-                            Can you crack the code with my favroite things?
+                            Can you crack the code with the correct answers?
                         </h1>
                         <h3>
-                            What is my favorite food?
+                            What is the longest river?
                         </h3>
-                        <select id="food">
+                        <select id="river">
                             <option>--Select--</option>
-                            <option>apple</option>
-                            <option>banana</option>
-                            <option>grape</option>
-                            <option>lemon</option>
-                            <option>strawberry</option>
-                            <option>rasberry</option>
+                            <option>Arkansas River</option>
+                            <option>Nile River</option>
+                            <option>Red River</option>
+                            <option>Yukon River</option>
+                            <option>Mississippi River</option>
+                            <option>Missouri River</option>
+                            <option>Ohio River</option>
                         </select>
                         <h3>
-                            What is my favorite color?
+                            Who is the founder of Microsoft?
                         </h3>
-                        <select id="color">
+                        <select id="Microsoft">
                             <option>--Select--</option>
-                            <option>red</option>
-                            <option>green</option>
-                            <option>yellow</option>
-                            <option>purple</option>
-                            <option>black</option>
-                            <option>blue</option>
-                            <option>pink</option>
-                            <option>indigo</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option> 
+                            <option>Elon Musk</option>
+                            <option>Christopher Columbus</option>
                         </select>
                         <h3>
-                            What is my favorite holiday?
+                            Who is the founder of Apple?
                         </h3>
-                        <select id="holiday">
+                        <select id="Apple">
                             <option>--Select--</option>
-                            <option>holi</option>
-                            <option>christmas</option>
-                            <option>new year</option>
-                            <option>christmas eve</option>
-                            <option>new year eve</option>
-                            <option>diwali</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option>
+                            <option>Elon Musk</option>
+                            <option>Christopher Columbus</option>
                         </select>
                         <h3>
-                            What is your favorite animal?
+                            Who is the founder of Google?
                         </h3>
-                        <select id="animal">
+                        <select id="Google">
                             <option>--Select--</option>
-                            <option>skunk</option>
-                            <option>bear</option>
-                            <option>cat</option>
-                            <option>dog</option>
-                            <option>bull</option>
-                            <option>squirrel</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option>
+                            <option>Elon Musk</option>
+                            <option>Christopher Columbus</option>
                         </select>
                         <h3>
-                            What is your favorite language?
+                            Who is the founder of Space X?
                         </h3>
-                        <select id="language">
+                        <select id="Tesla">
                             <option>--Select--</option>
-                            <option>english</option>
-                            <option>spainsh</option>
-                            <option>french</option>
-                            <option>chinese</option>
-                            <option>hindi</option>
-                            <option>marathi</option>
-                            <option>tamil</option>
+                            <option>Larry Page, Sergey Brin</option>
+                            <option>Bill Gates, Paul Allen</option>
+                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                            <option>Jeff Bezos</option>
+                            <option>Elon Musk</option>
+                            <option>Christopher Columbus</option>
+                        </select>
+                        <h3>
+                            What is 569+765?
+                        </h3>
+                        <select id="569+765">
+                            <option>--Select--</option>
+                            <option>6783</option>
+                            <option>3425</option>
+                            <option>1334 (correct)</option>
+                            <option>987</option>
+                            <option>2199</option>
+                            <option>3400</option>
+                            <option>3567</option>
+                            <option>1345</option>
+                            <option>1344</option>
+                            <option>1343</option>
                         </select>
                     </td>
                     <td>
-                        <img id="imgSuccess" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\golden-trophy.png" />
-                        <img id="imgWrong" class="images" style="display:none;" src="C:\Users\pshuk\Pictures\Wrong.png" />
+                        <img id="imgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
+                        <img id="imgWrong" class="images" style="display:none;" src="images\Wrong.png" />
 
                     </td>
 
@@ -497,7 +538,5 @@
         </div>
 
 </body>
-<!--<script>
-    checkLanguage();
-</script>-->
+    </div>
 </html>
