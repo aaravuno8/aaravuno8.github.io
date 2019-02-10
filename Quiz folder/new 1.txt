@@ -1,0 +1,110 @@
+Arkansas River
+Nile River
+Red River
+Yukon River
+Mississippi River
+Missouri River
+Ohio River
+
+Larry Page, Sergey Brin
+Bill Gates, Paul Allen
+Steve Jobs, Steve Wozniak, Ronald Wayne
+Jeff Bezos
+Elon Musk
+Christopher Columbus
+
+6783
+3425
+1334 (correct)
+987
+2199
+3400
+3567
+1345
+1344
+1343
+
+
+
+
+
+
+
+
+
+Spainsh:----------------------------------------------------------------------------------------------------------------------
+
+Arkansas River               |
+el rio Nilo                  |
+río Rojo                     |
+Rio yukon                    |
+río Mississippi              |
+Rio misuri                   |
+Rio de ohio                  |
+
+Larry Page, Sergey Brin
+Bill Gates, Paul Allen
+Steve Jobs, Steve Wozniak, Ronald Wayne
+Jeff Bezos
+Elon Musk
+Cristobal colomb
+
+6783
+3425
+1334 (correcto)
+987
+2199
+3400
+3567
+1345
+1344
+1343
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+French:-----------------------------------------------------------------------------------------------------------------------
+
+Arkansas River
+le Nil
+rivière Rouge
+Fleuve yukon
+Fleuve Mississippi
+Missouri River
+Rivière Ohio
+
+Larry Page, Sergey Brin
+Bill Gates, Paul Allen
+Steve Jobs, Steve Wozniak, Ronald Wayne
+Jeff Bezos.-7u
+Elon Musk
+Christophe Colomb
+
+6783
+3425
+1334 (correct)
+987
+2199
+3400
+3567
+1345
+1344
+1343
+

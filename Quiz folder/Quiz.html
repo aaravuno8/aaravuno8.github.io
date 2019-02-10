@@ -1,18 +1,21 @@
 <!DOCTYPE html>
+<html>
 <head>
     <style>
         body {
             background-color: aqua;
             color: crimson;
             font-size: 25px;
-            
         }
+
         button {
             font-size: 25px;
         }
+
         select {
             font-size: 25px;
         }
+
         input {
             font-size: 25px;
         }
@@ -30,8 +33,8 @@
 
         function getTranslation(selectionName) {
             if (currLanguage == "spanish") {
-                if (selectionName == "strawberry") {
-                    selectionName = "fresa";
+                if (selectionName == "Nile River") {
+                    selectionName = "el rio Nilo   ";
                 }
                 else if (selectionName == "red") {
                     selectionName = "rojo";
@@ -93,7 +96,12 @@
                 imagesList[i].style.display = "none";
             }
 
-            resetDropdown();
+            var selectList = document.getElementsByTagName("select");
+            for (i = 0; i < selectList.length; i++) {
+                selectList[i].selectedIndex = "0";
+            }
+
+            //resetDropdown();
         }
 
 
@@ -101,23 +109,24 @@
 
             if (document.getElementById("radioEnglish").checked) {
                 currLanguage = "";
-                hide("divSpanish");
-                hide("divFrench");
+                //hide("divSpanish");
+                //hide("divFrench");
                 show("divEnglish");
             }
             else if (document.getElementById("radioSpanish").checked) {
                 currLanguage = "spanish";
-                hide("divEnglish");
-                hide("divFrench");
-                show("divSpanish");
+                //hide("divEnglish");
+                //hide("divFrench");
+                //show("divSpanish");
             }
             else if (document.getElementById("radioFrench").checked) {
                 currLanguage = "french";
-                hide("divEnglish");
-                hide("divSpanish");
-                show("divFrench");
+                //hide("divEnglish");
+                //hide("divSpanish");
+                //show("divFrench");
             }
             reset();
+            changeText();
         }
 
         function getElementName(elementName) {
@@ -141,37 +150,37 @@
             }
         }
         function onCorrectClick() {
-            setSelectedThing(getElementName("food"), getTranslation("strawberry"));
-            setSelectedThing(getElementName("color"), getTranslation("red"));
-            setSelectedThing(getElementName("holiday"), getTranslation("christmas"));
-            setSelectedThing(getElementName("animal"), getTranslation("bear"));
-            setSelectedThing(getElementName("language"), getTranslation("hindi"));
+            setSelectedThing(getElementName("river"), 2);
+            setSelectedThing(getElementName("Microsoft"), 2);
+            setSelectedThing(getElementName("Apple"), 3);
+            setSelectedThing(getElementName("Google"), 1);
+            setSelectedThing(getElementName("Space X"), 5);
+            setSelectedThing(getElementName("569+765"), 3);
         }
-        function resetDropdown() {
-            document.getElementById(getElementName("food")).selectedIndex = "0";
-            document.getElementById(getElementName("color")).selectedIndex = "0";
-            document.getElementById(getElementName("holiday")).selectedIndex = "0";
-            document.getElementById(getElementName("animal")).selectedIndex = "0";
-            document.getElementById(getElementName("language")).selectedIndex = "0";
-        }
+        //function resetDropdown() {
+
+        //    document.getElementsByTagName("select")
+
+        //    document.getElementById(getElementName("food")).selectedIndex = "0";
+        //    document.getElementById(getElementName("color")).selectedIndex = "0";
+        //    document.getElementById(getElementName("holiday")).selectedIndex = "0";
+        //    document.getElementById(getElementName("animal")).selectedIndex = "0";
+        //    document.getElementById(getElementName("language")).selectedIndex = "0";
+        //}
         function setSelectedThing(checkThis, correctAnswer) {
-            document.getElementById(checkThis).value = correctAnswer;
+            document.getElementById(checkThis).selectedIndex = correctAnswer;
         }
         function onSubmitClick() {
-
-
-
             //reset stuff
             allAnswersCorrect = true;
             document.getElementById(getElementName("testResult")).innerHTML = "";
-
             //check dropdowns
-            checkSelectedThing(getElementName("food"), getTranslation("strawberry"));
-            checkSelectedThing(getElementName("color"), getTranslation("red"));
-            checkSelectedThing(getElementName("holiday"), getTranslation("christmas"));
-            checkSelectedThing(getElementName("animal"), getTranslation("bear"));
-            checkSelectedThing(getElementName("language"), getTranslation("hindi"));
-
+            checkSelectedThing(getElementName("river"), 2);
+            checkSelectedThing(getElementName("Microsoft"), 2);
+            checkSelectedThing(getElementName("Apple"), 3);
+            checkSelectedThing(getElementName("Google"), 1);
+            checkSelectedThing(getElementName("Space X"), 5);
+            checkSelectedThing(getElementName("569+765"), 3);
             //show result
             if (allAnswersCorrect)
                 document.getElementById(getElementName("testResult")).innerHTML = getTranslation("All of your selections are correct. The code is " + getSecretOTP() + ".");
@@ -180,337 +189,387 @@
         }
 
 
-        function checkSelectedThing(checkThis, correctAnswer) {
-            var selectedFood = document.getElementById(checkThis).value;
-            var messageList = "";
-            if (selectedFood == correctAnswer) {
-                //messageList = "Your " + checkThis + " selection is correct! <br/>";
-            }
-            else {
+        function checkSelectedThing(checkThis, correctIndex) {
+            if (document.getElementById(checkThis).selectedIndex != correctIndex) {
                 allAnswersCorrect = false;
-                //messageList = "Your " + checkThis + " selection is not correct! <br/>";
-
             }
-
-
         }
-
-
-
     </script>
 
 </head>
 <body>
+    <div id="div Choose Language">
         Choose Language:  <input type="radio" id="radioEnglish" name="language" value="english" onchange="checkLanguage()">English
         <input id="radioSpanish" type="radio" name="language" value="spanish" onchange="checkLanguage()"> Spanish
         <input id="radioFrench" type="radio" name="language" value="french" onchange="checkLanguage()"> French
         <br>
+    </div>
+
+    <div id="divFrench" style="display:none;">
+        <table>
+
+            <tr>
+
+                <td>
+                    <h1>
+                        Pouvez-vous déchiffrer le code avec mes choses préférées?
+                    </h1>
+                    <h3>
+                        Quel est mon plat préféré?
+                    </h3>
+                    <select id="ffood">
+                        <option>--Sélectionnez--</option>
+                        <option>Arkansas River</option>
+                        <option>le Nil</option>
+                        <option>rivière Rouge</option>
+                        <option>Fleuve yukon</option>
+                        <option>Fleuve Mississippi</option>
+                        <option>Missouri River</option>
+                        <option>Rivière Ohio</option>
+                    </select>
+                    <h3>
+                        Quelle est ma couleur préférée?
+                    </h3>
+                    <select id="fcolor">
+                        <option>--Sélectionnez--</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christophe Colomb</option>
+                    </select>
+                    <h3>
+                        Quelles sont mes vacances préférées?
+                    </h3>
+                    <select id="fholiday">
+                        <option>--Sélectionnez--</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christophe Colomb</option>
+                    </select>
+                    <h3>
+                        Quel est votre animal préféré?
+                    </h3>
+                    <select id="fanimal">
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christophe Colomb</option>
+                    </select>
+                    <h3>
+                        Quelle est votre langue préférée?
+                    </h3>
+                    <select id="flanguage">
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christophe Colomb</option>
+                    </select>
+                    <h3>
+                        Quelle est votre langue préférée?
+                    </h3>
+                    <select id="flanguage">
+                        <option>6783</option>
+                        <option>3425</option>
+                        <option>1334 (correct)</option>
+                        <option>987</option>
+                        <option>2199</option>
+                        <option>3400</option>
+                        <option>3567</option>
+                        <option>1345</option>
+                        <option>1344</option>
+                        <option>1343</option>
+
+                    </select>
+                </td>
+                <td>
+                    <img id="fimgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
+                    <img id="fimgWrong" class="images" style="display:none;" src="images\Wrong2.png" />
+
+                </td>
+
+            </tr>
+
+        </table>
+        <br />
+        <p id="ftestResult">
+
+        </p>
 
 
-        <div id="divFrench" style="display:none;">
-            <table>
+        <br />
+        <button onclick="onSubmitClick()"> Soumettre </button>
+        <br /> <br />
+        <button onclick="onCorrectClick()"> Réponses correctes </button>
+        <input placeholder="tapez votre code" id="fcode" type="password">
 
-                <tr>
+        <br />
+        <br />
+        <br />
+        <button onclick="OnSubmitCodeClick()"> Code d'envoi </button>
+        <br />
+        <br />
+        <br />
+    </div>
 
-                    <td>
-                        <h1>
-                            Pouvez-vous déchiffrer le code avec mes choses préférées?
-                        </h1>
-                        <h3>
-                            Quel est mon plat préféré?
-                        </h3>
-                        <select id="ffood">
-                            <option>--Sélectionnez--</option>
-                            <option>pomme</option>
-                            <option>banane</option>
-                            <option>raisin</option>
-                            <option>citron</option>
-                            <option>fraise</option>
-                            <option>framboise</option>
-                        </select>
-                        <h3>
-                            Quelle est ma couleur préférée?
-                        </h3>
-                        <select id="fcolor">
-                            <option>--Sélectionnez--</option>
-                            <option>rouge</option>
-                            <option>vert</option>
-                            <option>jaune</option>
-                            <option>violet</option>
-                            <option>noir</option>
-                            <option>bleu</option>
-                            <option>rose</option>
-                            <option>indigo</option>
-                        </select>
-                        <h3>
-                            Quelles sont mes vacances préférées?
-                        </h3>
-                        <select id="fholiday">
-                            <option>--Sélectionnez--</option>
-                            <option>holi</option>
-                            <option>noël</option>
-                            <option>nouvel an</option>
-                            <option>veille de Noël</option>
-                            <option>veille du nouvel an</option>
-                            <option>diwali</option>
-                        </select>
-                        <h3>
-                            Quel est votre animal préféré?
-                        </h3>
-                        <select id="fanimal">
-                            <option>--Sélectionnez--</option>
-                            <option>moufette</option>
-                            <option>ours</option>
-                            <option>chat</option>
-                            <option>chien</option>
-                            <option>taureau</option>
-                            <option>écureuil</option>
-                        </select>
-                        <h3>
-                            Quelle est votre langue préférée?
-                        </h3>
-                        <select id="flanguage">
-                            <option>--Sélectionnez--</option>
-                            <option>anglais</option>
-                            <option>spainsh</option>
-                            <option>français</option>
-                            <option>chinois</option>
-                            <option>hindi</option>
-                            <option>marathi</option>
-                            <option>tamil</option>
-                        </select>
-                    </td>
-                    <td>
-                        <img id="fimgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
-                        <img id="fimgWrong" class="images" style="display:none;" src="images\Wrong2.png" />
-
-                    </td>
-
-                </tr>
-
-            </table>
-            <br />
-            <p id="ftestResult">
-
-            </p>
-
-
-            <br />
-            <button onclick="onSubmitClick()"> Soumettre </button>
-            <br /> <br />
-            <button onclick="onCorrectClick()"> Réponses correctes </button>
-            <input placeholder="tapez votre code" id="fcode" type="password">
-
-            <br />
-            <br />
-            <br />
-            <button onclick="OnSubmitCodeClick()"> Code d'envoi </button>
-            <br />
-            <br />
-            <br />
-        </div>
-
-        <div id="divSpanish" style="display:none;">
-            <table>
-                <tr>
-                    <td>
-                        <h1>
-                            ¿Puedes descifrar el código con mis cosas favoritas?
-                        </h1>
-                        <h3>
-                            ¿Cuál es mi comida favorita?
-                        </h3>
-                        <select id="sfood">
-                            <option>--seleccionar--</option>
-                            <option>manzana</option>
-                            <option>plátano</option>
-                            <option>uva</option>
-                            <option>limón</option>
-                            <option>fresa</option>
-                            <option>frambuesa</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es mi color favorito?
-                        </h3>
-                        <select id="scolor">
-                            <option>--seleccionar--</option>
-                            <option>rojo</option>
-                            <option>verde</option>
-                            <option>amarillo</option>
-                            <option>púrpura</option>
-                            <option>black</option>
-                            <option>azul</option>
-                            <option>rosa</option>
-                            <option>indigo</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es mi fiesta favorita?
-                        </h3>
-                        <select id="sholiday">
-                            <option>--seleccionar--</option>
-                            <option>holi</option>
-                            <option>navidad</option>
-                            <option>año nuevo</option>
-                            <option>nochebuena</option>
-                            <option>víspera de año nuevo</option>
-                            <option>diwali</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es tu animal favorito?
-                        </h3>
-                        <select id="sanimal">
-                            <option>--seleccionar--</option>
-                            <option>zorrillo</option>
-                            <option>osa</option>
-                            <option>gato</option>
-                            <option>perro</option>
-                            <option>toro</option>
-                            <option>ardilla</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es tu idioma favorito?
-                        </h3>
-                        <select id="slanguage">
-                            <option>--seleccionar--</option>
-                            <option>inglés</option>
-                            <option>español</option>
-                            <option>francés</option>
-                            <option>chino</option>
-                            <option>hindi</option>
-                            <option>marathi</option>
-                            <option>tamil</option>
-                        </select>
-                    </td>
-                    <td>
-                        <img id="simgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
-                        <img id="simgWrong" class="images" style="display:none;" src="images\wrong2.png" />
-
-                    </td>
-
-                </tr>
-
-            </table>
-            <br />
-            <p id="stestResult">
-
-            </p>
-            <br />
-            <button onclick="onSubmitClick()">Enviar</button>
-            <br /><br />
-            <button onclick="onCorrectClick()">Respuestas correctas</button>
-            <input placeholder="Escribe el código" id="scode" type="password">
-            <br />
-            <br />
-            <br />
-            <button onclick="OnSubmitCodeClick()">Ingrese el código</button>
-        </div>
-
-        <div id="divEnglish" style="display:none;">
-            <table>
-
-                <tr>
-
-                    <td>
-                        <h1>
-                            Can you crack the code with the correct answers?
-                        </h1>
-                        <h3>
-                            What is the longest river?
-                        </h3>
-                        <select id="food">
-                            <option>--Select--</option>
-                            <option>Arkansas River</option>
-                            <option>Nile River</option>
-                            <option>Red River</option>
-                            <option>Yukon River</option>
-                            <option>Mississippi River</option>
-                            <option>Missouri River</option>
-                            <option>Ohio River</option>
-                        </select>
-                        <h3>
-                            Who is the founder of Microsoft?
-                        </h3>
-                        <select id="color">
-                            <option>--Select--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Elon Musk</option>
-                            <option>blue</option>
-                            <option>pink</option>
-                            <option>indigo</option>
-                        </select>
-                        <h3>
-                            Who is the founder of Apple?
-                        </h3>
-                        <select id="holiday">
-                            <option>--Select--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Elon Musk</option>
-                            <option>diwali</option>
-                        </select>
-                        <h3>
-                            Who is the founder of Google?
-                        </h3>
-                        <select id="animal">
-                            <option>--Select--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Elon Musk</option>
-                            <option>squirrel</option>
-                        </select>
-                        <h3>
-                            Who is the founder of Tesla?
-                        </h3>
-                        <select id="language">
-                            <option>--Select--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Elon Musk</option>
-                            <option>marathi</option>
-                            <option>tamil</option>
-                        </select>
-                    </td>
-                    <td>
-                        <img id="imgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
-                        <img id="imgWrong" class="images" style="display:none;" src="images\Wrong.png" />
-
-                    </td>
-
-                </tr>
-
-            </table>
-            <br />
-            <p id="testResult">
-
-            </p>
+    <div id="divSpanish" style="display:none;">
+        <table>
+            <tr>
+                <td>
+                    <h1>
+                        ¿Puedes descifrar el código con las respuestas correctas?
+                    </h1>
+                    <h3>
+                        ¿Cuál es el río más largo?
+                    </h3>
+                    <select id="sfood">
+                        <option>--seleccionar--</option>
+                        <option>Arkansas River</option>
+                        <option>el rio Nilo</option>
+                        <option>río Rojo</option>
+                        <option>Rio yukon</option>
+                        <option>río Mississippi</option>
+                        <option>Rio misuri</option>
+                        <option>Rio de ohio</option>
+                    </select>
+                    <h3>
+                        ¿Cuál es mi color favorito?
+                    </h3>
+                    <select id="scolor">
+                        <option>--seleccionar--</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Cristobal colomb</option>
+                    </select>
+                    <h3>
+                        ¿Cuál es mi fiesta favorita?
+                    </h3>
+                    <select id="sholiday">
+                        <option>--seleccionar--</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                    </select>
+                    <h3>
+                        ¿Cuál es tu animal favorito?
+                    </h3>
+                    <select id="sanimal">
+                        <option>--seleccionar--</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Jeff Bezos</option>
+                        <option>Cristobal colomb</option>
+                        <option>Elon Musk</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                    </select>
+                    <h3>
+                        ¿Cuál es tu idioma favorito?
+                    </h3>
+                    <select id="slanguage">
+                        <option>--seleccionar--</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Cristobal colomb</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Elon Musk</option>
+                    </select>
+                    <h3>
+                        ¿Cuál es tu idioma favorito?
+                    </h3>
+                    <select id="slanguage">
+                        <option>--seleccionar--</option>
+                        <option>6783</option>
+                        <option>3425</option>
+                        <option>1334 (correcto)</option>
+                        <option>987</option>
+                        <option>2199</option>
+                        <option>3400</option>
+                        <option>3567</option>
+                        <option>1345</option>
+                        <option>1344</option>
+                        <option>1343</option>
+                    </select>
 
 
-            <br />
-            <button onclick="onSubmitClick()">Submit</button>
-            <br /><br />
-            <!--<button onclick="onCorrectClick()">Correct Answers</button>-->
-            <input placeholder="type your code" id="code" type="password">
 
-            <br />
-            <br />
-            <br />
-            <button onclick="OnSubmitCodeClick()">Submit Code</button>
-            <br />
-            <br />
-            <br />
-        </div>
+                </td>
+                <td>
+                    <img id="simgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
+                    <img id="simgWrong" class="images" style="display:none;" src="images\wrong2.png" />
+
+                </td>
+
+            </tr>
+
+        </table>
+        <br />
+        <p id="stestResult">
+
+        </p>
+        <br />
+        <button onclick="onSubmitClick()">Enviar</button>
+        <br /><br />
+        <button onclick="onCorrectClick()">Respuestas correctas</button>
+        <input placeholder="Escribe el código" id="scode" type="password">
+        <br />
+        <br />
+        <br />
+        <button onclick="OnSubmitCodeClick()">Ingrese el código</button>
+    </div>
+
+    <div id="divEnglish" style="display:none;">
+        <table>
+
+            <tr>
+
+                <td>
+                    <h1>
+                        #CorrectAnswers#
+                    </h1>
+                    <h3>
+                        #LongestRiver#
+                    </h3>
+                    <select id="river">
+                        <option>#Select#</option>
+                        <option>Arkansas River</option>
+                        <option>Nile River</option>
+                        <option>Red River</option>
+                        <option>Yukon River</option>
+                        <option>Mississippi River</option>
+                        <option>Missouri River</option>
+                        <option>Ohio River</option>
+                    </select>
+                    <h3>
+                        #Microsoft#
+                    </h3>
+                    <select id="Microsoft">
+                        <option>#Select#</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christopher Columbus</option>
+                    </select>
+                    <h3>
+                        #Apple#
+                    </h3>
+                    <select id="Apple">
+                        <option>#Select#</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christopher Columbus</option>
+                    </select>
+                    <h3>
+                        #Google#
+                    </h3>
+                    <select id="Google">
+                        <option>#Select#</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christopher Columbus</option>
+                    </select>
+                    <h3>
+                        Who is the founder of Space X?
+                    </h3>
+                    <select id="Space X">
+                        <option>#Select#</option>
+                        <option>Larry Page, Sergey Brin</option>
+                        <option>Bill Gates, Paul Allen</option>
+                        <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
+                        <option>Jeff Bezos</option>
+                        <option>Elon Musk</option>
+                        <option>Christopher Columbus</option>
+                    </select>
+                    <h3>
+                        #Math#
+                    </h3>
+                    <select id="569+765">
+                        <option>#Select#</option>
+                        <option>6783</option>
+                        <option>3425</option>
+                        <option>1334</option>
+                        <option>987</option>
+                        <option>2199</option>
+                        <option>3400</option>
+                        <option>3567</option>
+                        <option>1345</option>
+                        <option>1344</option>
+                        <option>1343</option>
+                    </select>
+                </td>
+                <td>
+                    <img id="imgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
+                    <img id="imgWrong" class="images" style="display:none;" src="images\Wrong.png" />
+
+                </td>
+
+            </tr>
+
+        </table>
+        <br />
+        <p id="testResult">
+
+        </p>
+
+
+        <br />
+        <button onclick="onSubmitClick()">Submit</button>
+        <br />
+        <button onclick="onCorrectClick()">Show Correct Response</button>
+        <br />
+              <label> Enter the Code:</label>
+        <input placeholder="type your code" id="code" type="password">
+        <button onclick="OnSubmitCodeClick()">Submit Code</button>
+    </div>
 
 </body>
-<!--<script>
-    checkLanguage();
-</script>-->
 </html>
+<script>
+    function changeText() {
+        var currHTML = document.body.innerHTML;
+        if (currLanguage == "") {
+            currHTML = currHTML.replace(/#CorrectAnswers#/g, 'Can you crack the code with the correct answers ?');
+            currHTML = currHTML.replace(/#LongestRiver#/g, 'What is the longest river?');
+            currHTML = currHTML.replace(/#Select#/g, '--Select--');
+            currHTML = currHTML.replace(/#Microsoft#/g, 'Who is the founder of Microsoft?');
+            currHTML = currHTML.replace(/#Apple#/g, 'Who is the founder of Apple?');
+            currHTML = currHTML.replace(/#Google#/g, 'Who is the founder of Google?');
+            currHTML = currHTML.replace(/#SpaceX#/g, 'Who is the founder of Space X?');
+            currHTML = currHTML.replace(/#Math#/g, 'How much is 569+765?');
+        }
+        else if (currLanguage == "") {
+            currHTML = currHTML.replace(/#CorrectAnswers#/g, 'Can you crack the code with the correct answers ?');
+            currHTML = currHTML.replace(/#LongestRiver#/g, 'What is the longest river?');
+            currHTML = currHTML.replace(/#Select#/g, '--Select--');
+            currHTML = currHTML.replace(/#Microsoft#/g, 'Who is the founder of Microsoft?');
+            currHTML = currHTML.replace(/#Apple#/g, 'Who is the founder of Apple?');
+            currHTML = currHTML.replace(/#Google#/g, 'Who is the founder of Google?');
+            currHTML = currHTML.replace(/#SpaceX#/g, 'Who is the founder of Space X?');
+            currHTML = currHTML.replace(/#Math#/g, 'How much is 569+765?');
+        }
+        document.body.innerHTML = currHTML;
+    }
+
+
+</script>

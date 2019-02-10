@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+        #text {
+            color: #00ff00;
+        }
+
+        #background {
+            background-color: #ff33cc;
+        }
+
+        #text1 {
+            color: darkred;
+        }
+    </style>
+
+</head>
+<body id="background">
+    <script>
+        function check() {
+            for (var i = 0; i < document.getElementsByTagName("input").length; i++) {
+                var chkbox = document.getElementsByTagName("input")[i];
+                if (chkbox.type == "radio") {
+                    if (chkbox.value == "correct") {
+                        if (chkbox.checked) {
+                            //alert("Correct Answer!");
+                            chkbox.parentElement.style = "background-color:blue;";
+                        }
+                        else
+                            chkbox.parentElement.style = "background-color:orange;";
+                    }
+                    else {
+                        if (chkbox.checked) {
+                            chkbox.parentElement.style = "background-color:red;";
+                            //alert("Thats Wrong!");
+                        }
+                        else
+                            chkbox.parentElement.style = "";
+                    }
+                }
+            }
+        }
+    </script>
+    <h1 id="text">
+        Welcome to My Website
+    </h1>
+
+    <table>
+        <tr>
+            <td>
+                <h1 id="text1">Multiplication Level 1</h1>
+                12 × 12 = 145
+                <span><input id="Checkbox"  type="radio" name="multi"/></span>
+                12 × 12 = 143
+                <span><input id="Checkbox" type="radio" name="multi"/></span>
+                12 × 12 = 144
+                <span><input id="Checkbox" type="radio" name="multi"value="correct" /></span>
+                12 × 12 = 142
+                <span><input id="Checkbox" type="radio" name="multi"/></span>
+                12 × 12 = 141
+                <span><input id="Checkbox" type="radio" name="multi"/></span>
+                12 × 12 = 140
+                <span><input id="Checkbox" type="radio" name="multi"/></span>
+                <br />
+                <h1 id="text1">Division Level 1</h1>
+                1388 ÷ 84 = 16
+                <span>
+                    <input id="Checkbox" type="radio" name="division"value="correct" />
+                </span>
+                1388 ÷ 84 = 15
+                <span><input id="Checkbox" type="radio" name="division"/></span>
+                1388 ÷ 84 = 17
+                <span><input id="Checkbox" type="radio" name="division"/></span>
+                1388 ÷ 84 = 13
+                <span><input id="Checkbox" type="radio" name="division"/></span>
+                1388 ÷ 84 = 3
+                <span><input id="Checkbox" type="radio" name="division"/></span>
+                1388 ÷ 84 = 6
+                <span><input id="Checkbox" type="radio" name="division"/></span>
+                <br />
+                <h1 id="text1">Multiplication Level 2</h1>
+                16 × 19 = 306
+                <span><input id="Checkbox" type="radio" name="multione"/></span>
+                16 × 19 = 305
+                <span><input id="Checkbox" type="radio" name="multione"/></span>
+                16 × 19 = 301
+                <span><input id="Checkbox" type="radio" name="multione"/></span>
+                16 × 19 = 302
+                <span><input id="Checkbox" type="radio" name="multione"/></span>
+                16 × 19 = 304
+                <span><input id="Checkbox" type="radio" name="multione"value="correct" /></span>
+                16 × 19 = 307
+                <span><input id="Checkbox" type="radio" name="multione"/></span>
+                <br />
+                <h1 id="text1">Division Level 2</h1>
+                156 ÷ 12 = 12
+                <span><input id="Checkbox" type="radio" name="divone"/></span>
+                156 ÷ 12 = 11
+                <span><input id="Checkbox" type="radio" name="divone"/></span>
+                156 ÷ 12 = 15
+                <span><input id="Checkbox" type="radio" name="divone"/></span>
+                156 ÷ 12 = 13
+                <span>
+                    <input id="Checkbox" type="radio" name="divone"value="correct" />
+                </span>
+                156 ÷ 12 = 16
+                <span><input id="Checkbox" type="radio" name="divone"/></span>
+                156 ÷ 12 = 6
+                <span><input id="Checkbox" type="radio" name="divone"/></span>
+            </td>
+        </tr>
+    </table>
+    <button onclick="check()">
+        check
+    </button>
+
+    <hr />
+    <table style="border:purple solid 2px">
+        <tr>
+            <td style="width:80px;">
+                Legend:
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                Red
+            </td>
+            <td style="color:red">
+                Wrong Answer
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Blue
+            </td>
+            <td style="color:blue">
+                Corect Answer
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Orange
+            </td>
+            <td style="color:orange">
+                Expected Correct Answer
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
