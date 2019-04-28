@@ -1,0 +1,25 @@
+﻿input {
+    height: auto;
+    margin-left: 0px;
+    width: 1450px;
+    margin-right: 0px;
+    font-size: larger;
+    color: darkred;
+}
+body {
+    background-color: aqua;
+    font-size: larger;
+    color: darkred;
+}
+button {
+    font-size: larger;
+    color: darkred;
+}
+a {
+    color: darkred;
+    font-size: larger;
+}
+#noscreen {
+    color: darkred;
+    font-size: larger;
+}
