@@ -1,10 +1,19 @@
-﻿body
-{
-    background-color:cadetblue;
+﻿body {
+    background-color: cadetblue;
+    color: darkred;
+    font-size: 20px;
+    height: 20px;
+    width: 100px;
 }
 input {
     color: darkred;
     font-size: 20px;
     height: 20px;
     width: 100px;
+}
+button {
+    height: 20px;
+    width: 100px;
+    color: darkred;
+    font-size: 20px;
 }
