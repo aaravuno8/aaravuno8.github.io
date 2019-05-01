@@ -4,11 +4,10 @@
 input {
     color: darkred;
     font-size: 20px;
-    height: 20px;
+
     width: 100px;
 }
 button {
-    height: 40px;
     width: 100px;
     color: darkred;
     font-size: 20px;
