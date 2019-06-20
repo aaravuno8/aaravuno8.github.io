@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div id="div work area">
+<html>
 <head>
     <style>
         body {
@@ -202,224 +202,12 @@
 
 </head>
 <body>
-   <div id="div Choose Language">
+   <!--<div id="div Choose Language">
         Choose Language:  <input type="radio" id="radioEnglish" name="language" value="english" onchange="checkLanguage()">English
         <input id="radioSpanish" type="radio" name="language" value="spanish" onchange="checkLanguage()"> Spanish
         <input id="radioFrench" type="radio" name="language" value="french" onchange="checkLanguage()"> French
         <br>
-  </div>
-
-        <div id="divFrench" style="display:none;">
-            <table>
-
-                <tr>
-
-                    <td>
-                        <h1>
-                            Pouvez-vous déchiffrer le code avec mes choses préférées?
-                        </h1>
-                        <h3>
-                            Quel est mon plat préféré?
-                        </h3>
-                        <select id="ffood">
-                            <option>--Sélectionnez--</option>
-                            <option>pomme</option>
-                            <option>banane</option>
-                            <option>raisin</option>
-                            <option>citron</option>
-                            <option>fraise</option>
-                            <option>framboise</option>
-                        </select>
-                        <h3>
-                            Quelle est ma couleur préférée?
-                        </h3>
-                        <select id="fcolor">
-                            <option>--Sélectionnez--</option>
-                            <option>rouge</option>
-                            <option>vert</option>
-                            <option>jaune</option>
-                            <option>violet</option>
-                            <option>noir</option>
-                            <option>bleu</option>
-                            <option>rose</option>
-                            <option>indigo</option>
-                        </select>
-                        <h3>
-                            Quelles sont mes vacances préférées?
-                        </h3>
-                        <select id="fholiday">
-                            <option>--Sélectionnez--</option>
-                            <option>holi</option>
-                            <option>noël</option>
-                            <option>nouvel an</option>
-                            <option>veille de Noël</option>
-                            <option>veille du nouvel an</option>
-                            <option>diwali</option>
-                        </select>
-                        <h3>
-                            Quel est votre animal préféré?
-                        </h3>
-                        <select id="fanimal">
-                            <option>--Sélectionnez--</option>
-                            <option>moufette</option>
-                            <option>ours</option>
-                            <option>chat</option>
-                            <option>chien</option>
-                            <option>taureau</option>
-                            <option>écureuil</option>
-                        </select>
-                        <h3>
-                            Quelle est votre langue préférée?
-                        </h3>
-                        <select id="flanguage">
-                            <option>--Sélectionnez--</option>
-                            <option>anglais</option>
-                            <option>spainsh</option>
-                            <option>français</option>
-                            <option>chinois</option>
-                            <option>hindi</option>
-                            <option>marathi</option>
-                            <option>tamil</option>
-                        </select>
-                    </td>
-                    <td>
-                        <img id="fimgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
-                        <img id="fimgWrong" class="images" style="display:none;" src="images\Wrong2.png" />
-
-                    </td>
-
-                </tr>
-
-            </table>
-            <br />
-            <p id="ftestResult">
-
-            </p>
-
-
-            <br />
-            <button onclick="onSubmitClick()"> Soumettre </button>
-            <br /> <br />
-            <button onclick="onCorrectClick()"> Réponses correctes </button>
-            <input placeholder="tapez votre code" id="fcode" type="password">
-
-            <br />
-            <br />
-            <br />
-            <button onclick="OnSubmitCodeClick()"> Code d'envoi </button>
-            <br />
-            <br />
-            <br />
-        </div>
-
-        <div id="divSpanish" style="display:none;">
-            <table>
-                <tr>
-                    <td>
-                        <h1>
-                            ¿Puedes descifrar el código con mis cosas favoritas?
-                        </h1>
-                        <h3>
-                            ¿Cuál es mi comida favorita?
-                        </h3>
-                        <select id="sfood">
-                            <option>--seleccionar--</option>
-                            <option>Arkansas River</option>
-                            <option>el rio Nilo</option>
-                            <option>río Rojo</option>
-                            <option>Rio yukon</option>
-                            <option>río Mississippi</option>
-                            <option>Rio misuri</option>
-                            <option>Rio de ohio</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es mi color favorito?
-                        </h3>
-                        <select id="scolor">
-                            <option>--seleccionar--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Elon Musk</option>
-                            <option>Cristobal colomb</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es mi fiesta favorita?
-                        </h3>
-                        <select id="sholiday">
-                            <option>--seleccionar--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Elon Musk</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es tu animal favorito?
-                        </h3>
-                        <select id="sanimal">
-                            <option>--seleccionar--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Jeff Bezos</option>
-                            <option>Cristobal colomb</option>
-                            <option>Elon Musk</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                        </select>
-                        <h3>
-                            ¿Cuál es tu idioma favorito?
-                        </h3>
-                        <select id="slanguage">
-                            <option>--seleccionar--</option>
-                            <option>Larry Page, Sergey Brin</option>
-                            <option>Steve Jobs, Steve Wozniak, Ronald Wayne</option>
-                            <option>Jeff Bezos</option>
-                            <option>Cristobal colomb</option>
-                            <option>Bill Gates, Paul Allen</option>
-                            <option>Elon Musk</option>
-                        </select>
-                        <select id="slanguage">
-                            <option>--seleccionar--</option>
-                            <option>6783</option>
-                            <option>3425</option>
-                            <option>1334 (correcto)</option>
-                            <option>987</option>
-                            <option>2199</option>
-                            <option>3400</option>
-                            <option>3567</option>
-                            <option>1345</option>
-                            <option>1344</option>
-                            <option>1343</option>
-                        </select>
-
-
-
-                    </td>
-                    <td>
-                        <img id="simgSuccess" class="images" style="display:none;" src="images\golden-trophy.png" />
-                        <img id="simgWrong" class="images" style="display:none;" src="images\wrong2.png" />
-
-                    </td>
-
-                </tr>
-
-            </table>
-            <br />
-            <p id="stestResult">
-
-            </p>
-            <br />
-            <button onclick="onSubmitClick()">Enviar</button>
-            <br /><br />
-            <button onclick="onCorrectClick()">Respuestas correctas</button>
-            <input placeholder="Escribe el código" id="scode" type="password">
-            <br />
-            <br />
-            <br />
-            <button onclick="OnSubmitCodeClick()">Ingrese el código</button>
-        </div>
-
+  </div>-->
         <div id="divEnglish" style="display:none;">
             <table>
 
@@ -538,5 +326,4 @@
         </div>
 
 </body>
-    </div>
 </html>
