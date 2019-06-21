@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: deeppink;
+            color: darkorchid;
+        }
+        lable{
+            font-size:inherit 200px;
+        }
+    </style>
+</head>
+<body onload="Set();">
+    <h1>Calculator</h1><h1>Add</h1>
+    <input name="Operator" type="radio" id="Radio1" checked="checked" onchange="Set()" />
+    <h1>Subtract</h1>
+    <input name="Operator" id="Radio2" type="radio" onchange="Set()" />
+    <h1>Multiply</h1>
+    <input name="Operator" id="Radio3" type="radio" onchange="Set()" />
+    <h1>Divide</h1>
+    <input name="Operator" id="Radio4" type="radio" onchange="Set()" />
+
+    <input id="Text1" type="number" />
+    <label id="Lable1"></label>
+    <input id="Text2" type="number" />
+    <button onclick="Get();">Get Answer</button>
+
+    <label id="lblAnswer"></label>
+
+    <br />
+    <!--Issue faced:
+    <ul>
+        <li>1. On load JS error</li>
+        <li>2. Radio button was not getting checked</li>
+        <li>3. Get Answer was not working</li>
+        <li>4. No where to show answer</li>
+        <li>5. addition was not working</li>
+    </ul>
+    <br />
+    What was changed in the code (Match the number from above 1 - 1, 2 -2, etc..):
+    <ul>
+        <li>1. Script was reading element value BUT the element was not created yet! So, moved the Script block under the end of HTML tags</li>
+        <li>2. Tried changing radio button 'name' value</li>
+        <li>2. Found set() function was using '= true' for comparison. Use '== true'</li>
+        <li>2. I used (blah_blah_blah.checked)</li>
+        <li>3. Function Get() - document.getelem.id was missing '.value'</li>
+        <li>4. Added label lblAnswer</li>
+        <li>5. Use parseInt(docu.elem.value) in Get() to do addition</li>
+    </ul>-->
+</body>
+</html>
+<script>
+    var awn = 0;
+    var num1 = document.getElementById('Text1').value;
+    var num3 = 2;
+    function hide(id) {
+        document.getElementById(id).style.display = "none";
+    }
+    function show(id) {
+        document.getElementById(id).style.display = "block";
+    }
+    function Get() {
+        if (document.getElementById('Radio1').checked) {
+            awn = parseInt(document.getElementById('Text1').value) + parseInt(document.getElementById('Text2').value);
+        }
+        else {
+            if (document.getElementById('Radio2').checked) {
+                awn = document.getElementById('Text1').value - document.getElementById('Text2').value;
+            }
+            else {
+                if (document.getElementById('Radio3').checked) {
+                    awn = document.getElementById('Text1').value * document.getElementById('Text2').value;
+                }
+                else {
+                    if (document.getElementById('Radio4').checked) {
+                        awn = document.getElementById('Text1').value / document.getElementById('Text2').value;
+                    }
+                }
+            }
+        }
+
+        document.getElementById('lblAnswer').innerText = awn;
+    }
+    function Set() {
+        console.log('set');
+
+        if (document.getElementById('Radio1').checked) {
+            document.getElementById('Lable1').innerText = "+";
+        }
+        else {
+            if (document.getElementById('Radio2').checked) {
+                document.getElementById('Lable1').innerText = "-";
+            }
+            else {
+                if (document.getElementById('Radio3').checked) {
+                    document.getElementById('Lable1').innerText = "×";
+                }
+                else {
+                    if (document.getElementById('Radio4').checked) {
+                        document.getElementById('Lable1').innerText = "÷";
+                    }
+                }
+            }
+        }
+    }
+
+</script>
