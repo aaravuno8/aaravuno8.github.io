@@ -4,8 +4,34 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script>
+        function l2()
+        {
+            document.getElementById("code1").style.display = "none";
+            document.getElementById("code2").style.display = "block";
+        }
+    </script>
 </head>
 <body>
-    <h1>Great you allready know it!></h1>
+    <div id="code1">
+        <h1>Great you already know it!</h1>
+        <p>Can you crack this code:</p>
+        <u><p>Ozmib rwj!</p></u>
+        <p>The number is:</p>
+        <p>8</p>
+        <p>The code is:</p>
+        <input id="Code1" type="text" placeholder="The code is" />
+        <button id="submit1" onclick="l2()">Submit</button>
+    </div>
+    <div id="code2" hidden="hidden">
+        <h1>Level 2</h1>
+        <p>Can you crack this code:</p>
+        <u><p>Uwdm bw tmdmt bpzmm</p></u>
+        <p>The number is:</p>
+        <p>8</p>
+        <p>The code is:</p>
+        <input id="Code2" type="text" placeholder="The code is" />
+        <button id="submit2">Submit</button>
+    </div>
 </body>
 </html>
