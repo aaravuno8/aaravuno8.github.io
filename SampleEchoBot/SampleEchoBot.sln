@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
@@ -23,3 +24,30 @@ Global
 		SolutionGuid = {16917A52-3FC4-4374-83AD-D18BFB4693E3}
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEchoBot", "SampleEchoBot\SampleEchoBot.csproj", "{EA473633-C718-42FC-A5D6-D961F57BF28F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA473633-C718-42FC-A5D6-D961F57BF28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA473633-C718-42FC-A5D6-D961F57BF28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA473633-C718-42FC-A5D6-D961F57BF28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA473633-C718-42FC-A5D6-D961F57BF28F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16917A52-3FC4-4374-83AD-D18BFB4693E3}
+	EndGlobalSection
+EndGlobal
+>>>>>>> 266dbfad7aa5f811859f3e35c2fe03618167859f

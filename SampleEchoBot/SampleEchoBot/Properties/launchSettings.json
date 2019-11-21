@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "iisSettings": {
     "windowsAuthentication": false,
@@ -24,4 +25,32 @@
       "applicationUrl": "http://localhost:8000/"
     }
   }
+=======
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:8000/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "SampleEchoBot": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:8000/"
+    }
+  }
+>>>>>>> 266dbfad7aa5f811859f3e35c2fe03618167859f
 }
