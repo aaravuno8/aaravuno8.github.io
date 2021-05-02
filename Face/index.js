@@ -17,6 +17,8 @@ function startVideo(){
     )
 }
 
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video)
     document.body.append(canvas)
@@ -25,6 +27,7 @@ video.addEventListener('play', () => {
     setInterval(async () => {
         const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
         const resizedDetections = faceapi.resizeResults(detections, displaySize)
+        console.log(resizedDetections)
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
         faceapi.draw.drawDetections(canvas, resizedDetections)
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
