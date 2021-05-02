@@ -18,6 +18,11 @@ function startVideo(){
 }
 
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if (isMobile){
+    document.querySelector("#mobile").style.display = "block"
+}else{
+    document.querySelector("#mobile").style.display = "none"
+}
 
 video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video)
