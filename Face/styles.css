@@ -40,4 +40,10 @@ img {
   height: 550px;
   margin-top: 1%;
 }
+
+#mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /*# sourceMappingURL=styles.css.map */
