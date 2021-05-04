@@ -23,7 +23,7 @@ h1 {
 
 p {
   position: absolute;
-  margin-top: 2% !important;
+  margin-top: 5% !important;
   font-size: 20px;
   margin-right: 10% !important;
 }
@@ -39,6 +39,11 @@ img {
   width: auto;
   height: 550px;
   margin-top: 1%;
+}
+
+div {
+  position: absolute;
+  margin-top: 2% !important;
 }
 
 #mobile {
